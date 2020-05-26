@@ -1,2 +1,6 @@
 node_modules/
+<<<<<<< HEAD
 client 
+=======
+client/node_modules/
+>>>>>>> 7d30ff6... First

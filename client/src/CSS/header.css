@@ -1,0 +1,16 @@
+.block{
+    position: absolute;
+    background-color: rgb(53, 85, 117);
+    color: white;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: 1em;
+    border-color: 3px solid gray;
+}
+
+img{
+    width: 10%;
+    display:block;
+    margin: auto;
+}
