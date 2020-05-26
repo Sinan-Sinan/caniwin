@@ -1,0 +1,32 @@
+{
+  "name": "keepplaying",
+  "version": "1.0.0",
+  "description": "Keep Playing Checker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Sinan",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "http-proxy-middleware": "^1.0.4",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.0",
+    "react-router-dom": "^5.2.0",
+    "requirejs-babel": "0.0.9"
+  }
+}
