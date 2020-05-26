@@ -24,7 +24,7 @@ class Rank extends Component {
         } catch (err) {
             this.setState({
                 loading: false,
-                error: err.status.message
+                //error: err.status.message
             });
         }
     }
@@ -49,7 +49,7 @@ class Rank extends Component {
                 </div>
             )
         } else {
-            const element = Math.getRandomInt();
+            const element = <h1> hi </h1>;
             return (
                 <div>
                     {element}
