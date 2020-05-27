@@ -8,7 +8,7 @@ This is how you get started.
 
 There are 3 majors things happing.
 
-Server.js is the MAIN api this is where the majority of the backend is happening. Then in the directory 'client' all the frontend is happening, it is using ReactJS.
+Server.js is the MAIN api this is where the majority of the backend is happening. Then in the directory 'client' all the frontend is happening, it is using ReactJS. A flask server is also running for the AI.
 
 to get statered you need to donwload NodeJS from here https://nodejs.org/en/
 
