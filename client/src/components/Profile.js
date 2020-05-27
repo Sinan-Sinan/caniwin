@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Rank from './Rank.js';
+import MatchHistroy from './MatchHistory.js';
 
 class Profile extends Component {
     constructor(props){
-        
         super(props);
         this.state = {
             loading: true,
@@ -75,7 +75,7 @@ class Profile extends Component {
                     </h1>
                     <img src={"https://cdn.communitydragon.org/" + this.state.patch + "/profile-icon/" + this.state.profileIconId } alt="Img"/>
                     <Rank defer accountId={this.state.id} region={this.props.match.params.region}/>
-                    
+                    <MatchHistroy />
                 </div>
             )
         }

@@ -3,5 +3,5 @@ node_modules/
 client 
 =======
 client/node_modules/
-python
+venv
 >>>>>>> 7d30ff6... First
