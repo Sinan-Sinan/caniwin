@@ -28,7 +28,9 @@ Now you have all the dependices downloaded.
  Do `npm run dev` and all the servers should go up.
  
  NodeJS is in port 5000
+ 
  Python is in port 4000
+ 
  ReactJS is in port 3000
 
 after that open your IDE and code away!
