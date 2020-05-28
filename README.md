@@ -28,6 +28,7 @@ After that you need to `cd` back into the parent directory and do `pip install f
 Now you have all the dependices downloaded.
 
 Do `npm run dev` and all the servers should go up.
+
 ---------------------------------------------------------------------------------------------------------------------------------------- 
  
  NodeJS is in port 5000
