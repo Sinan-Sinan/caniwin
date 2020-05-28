@@ -16,8 +16,21 @@ after this open your CLI program (CMD or Bash) `cd` into the directory you have 
 
 when you finish that `cd` into 'client' and do `npm i` again.
 
+You will need to download python to code the AI if you are working on that.
+
+To download python go here https://www.python.org/ download python 3.6+ since it is most compatible. 
+
+After that you need to `cd` back into the parent directory and do `pip install flask`.
+
+
 Now you have all the dependices downloaded.
 
-Now `cd` back into the parent directory and do `npm run dev`.
+ Do `npm run dev` and all the servers should go up.
+ 
+ NodeJS is in port 5000
+ Python is in port 4000
+ ReactJS is in port 3000
 
 after that open your IDE and code away!
+
+Thanks for the help!
