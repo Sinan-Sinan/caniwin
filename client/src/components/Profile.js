@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Rank from './Rank.js';
-import MatchHistroy from './MatchHistory.js';
+import MatchHistroy from './PlayAgain.js';
+import '../CSS/profile.css';
+import arrow from "../assets/profile/arrow.svg";
+import oval1 from "../assets/profile/1.svg";
+import oval2 from "../assets/profile/2.svg";
 
 class Profile extends Component {
+    
     constructor(props){
         super(props);
         this.state = {
@@ -15,9 +20,9 @@ class Profile extends Component {
             accountId: null,
             id: null,
             summonerLevel: null,
-            puuid: null
+            puuid: null,
+            redirect: false
         }
-
     }
 
     async componentDidMount() {
@@ -30,11 +35,9 @@ class Profile extends Component {
                 id: res.data.id,
                 puuid: res.data.puuid,
                 summonerLevel: res.data.summonerLevel,
-                loading: false
             }); 
         } catch (err) {
             this.setState({
-                loading: false,
                 //error: err.response.message
             });
         }
@@ -43,20 +46,23 @@ class Profile extends Component {
             this.setState({
                 patch: res.data[2],
                 loading: false
-            }); 
+            });             
         } catch (err) {
             this.setState({
-                loading: false,
+                loading: false
                 //error: err.response.message
             });
         }
       }
       
+    image(){
+        return ("https://cdn.communitydragon.org/" + this.state.patch + "/profile-icon/" + this.state.profileIconId);
+    }
     render() {
         if(this.state.loading){
             return (
                 <div>
-                    <h3>Loading...</h3>
+                    <h3 id="loading">Loading...</h3>
                 </div>
             )          
         }
@@ -70,12 +76,19 @@ class Profile extends Component {
         }else{
             return(
                 <div>
-                    <h1 className="summonerName">
-                        {this.state.name}
-                    </h1>
-                    <img src={"https://cdn.communitydragon.org/" + this.state.patch + "/profile-icon/" + this.state.profileIconId } alt="Img"/>
-                    <Rank defer accountId={this.state.id} region={this.props.match.params.region}/>
-                    <MatchHistroy />
+                    <a href="/">
+                        <img src={arrow} id="arrow" alt="arrow" />
+                    </a>
+                    <div className="user">  
+                        <h1 id="summonerName">
+                            {this.state.name}
+                        </h1>   
+                        <img src={ this.image() } id="summonerIcon" alt="Img"/> 
+                        <Rank defer accountId={this.state.id} region={this.props.match.params.region} action={this.handler}/>
+                        <MatchHistroy />
+                    </div>   
+                    <img src={oval1} id="oval1" alt="shape"/>
+                    <img src={oval2} id="oval2" alt="shape"/>                 
                 </div>
             )
         }

@@ -6,9 +6,9 @@ app = Flask(__name__)
 
 def getAnswer():
     if(random.randint(0, 1)):
-        return 'yes'
+        return 'Yes'
     else:
-        return 'no'
+        return 'No'
 
     return 'Error'
 

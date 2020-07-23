@@ -7,7 +7,7 @@
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
-    "python": "flask run",
+    "python": "flask run -h localhost -p 4000",
     "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run python\""
   },
   "author": "Sinan",
@@ -21,6 +21,7 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "@primer/octicons-react": "^10.0.0",
     "concurrently": "^5.2.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

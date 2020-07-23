@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import "../CSS/search.css"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
+import arrow  from '../assets/arrow.png';
+import oval1 from "../assets/home/3.svg";
+import oval2 from "../assets/home/4.svg";
 
 class Search extends Component {
 
@@ -24,7 +27,7 @@ class Search extends Component {
           [name]: value
         });
       }
-    
+    //
     onSubmit = () => {
         if(!this.state.name){
             toast.error("Please enter Summoner Name", {
@@ -46,34 +49,42 @@ class Search extends Component {
             return <Redirect to={{pathname: this.state.redirect}} />
         }
         return (
-            <div className="form-group">
-                <form>
-                    <div>
-                        <label htmlFor="region">Region: </label>
-                        <select name="region" value={this.state.region} onChange={this.handleInputChange}>
-                        <option value="na1">North America</option>
-                        <option value="eun1">Europe East</option>
-                        <option value="euw1">Europe West</option>
-                        <option value="jp1">Japan</option>
-                        <option value="kr">Korea</option>
-                        <option value="la1">LAN</option>
-                        <option value="la2">LAS</option>
-                        <option value="br1">Brazil</option>
-                        <option value="oc1">Oceania</option>
-                        <option value="tr1">Turkey</option>
-                        <option value="ru">Russia</option>
-                        </select>
-                    </div>
-                    <div>
-                        <input type="text" name="name" value={this.state.name} onChange={this.handleInputChange} placeholder="Summoner Name"/>
-                    </div>
-                    <div>
-                        <input type="button" value='Submit' className="btn" onClick={this.onSubmit}/>
-                    </div>
-                </form>
+            <div>
+                <div className="form-group">
+                    <form>
+                        <div>
+                            <select name="region" value={this.state.region} onChange={this.handleInputChange} id="region">
+                                <option value="none" selected disabled hidden> Region </option>
+                                <option value="na1">NA</option>
+                                <option value="eun1">EUN</option>
+                                <option value="euw1">EUW</option>
+                                <option value="jp1">JP</option>
+                                <option value="kr">KR</option>
+                                <option value="la1">LAN</option>
+                                <option value="la2">LAS</option>
+                                <option value="br1">BR</option>
+                                <option value="oc1">OC</option>
+                                <option value="tr1">TR</option>
+                                <option value="ru">RU</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input  type="text" name="name" value={this.state.name} onChange={this.handleInputChange} placeholder="Summoner Name" id="box"/>
+                        </div>
+                        
+                        <div>
+                            
+                            <button imageUrl={arrow} type="button" id="btn" onClick={this.onSubmit}>
+                                <img src={arrow} className="arrow" alt="arrow" onClick={this.onSubmit} /> 
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <img src={oval1} id="oval3" alt="shape"/>
+                <img src={oval2} id="oval4" alt="shape"/>
             </div>
         )
-    }
+    }//Change ovals
 }
 
 export default Search;

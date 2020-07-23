@@ -37,6 +37,13 @@ class Rank extends Component {
                     <h3>Go Back</h3>
                 </div>
             )
+        } else if(this.state.error){
+            return(
+                <div>
+                    <h1>{this.state.error}</h1>
+                    <h3>Go Back</h3>
+                </div>
+            )
         } else {
             return (
                 <div>
