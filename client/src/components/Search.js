@@ -27,7 +27,7 @@ class Search extends Component {
           [name]: value
         });
       }
-    //
+      
     onSubmit = () => {
         if(!this.state.name){
             toast.error("Please enter Summoner Name", {
@@ -84,7 +84,7 @@ class Search extends Component {
                 <img src={oval2} id="oval4" alt="shape"/>
             </div>
         )
-    }//Change ovals
+    }
 }
 
 export default Search;
