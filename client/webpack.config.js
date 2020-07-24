@@ -1,8 +1,9 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   output: {
-    path: path.resolve(__dirname, '../public'),
+    path: path.resolve(__dirname, '../public')
   }, 
   devServer: {
     inline: false,
@@ -13,9 +14,16 @@ module.exports = {
         pathRewrite: {
           "^/api": "/api/v1"
         }
-    }
+      }
     }
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      hash: true,
+      template: './public/index.html',
+      filename: '../public/index.html' //relative to root of the application
+    })
+  ],
   module: {
     rules: [
       {
@@ -38,7 +46,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'file-loader'
           }
         ]
       }
