@@ -8,7 +8,6 @@ import oval1 from "../assets/home/3.svg";
 import oval2 from "../assets/home/4.svg";
 
 class Search extends Component {
-
     constructor(props){
         super(props);
         this.state = {
@@ -20,16 +19,13 @@ class Search extends Component {
     }
 
     handleInputChange(event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-        this.setState({
-          [name]: value
-        });
+        this.setState({ [event.target.name]: event.target.value });
       }
       
     onSubmit = () => {
-        if(!this.state.name){
+         if(this.state.name !== ''){
+            this.setState({redirect: `/profile/${this.state.region}/${this.state.name}`});
+        } else {
             toast.error("Please enter Summoner Name", {
                 position: "top-left",
                 autoClose: 1000,
@@ -38,9 +34,7 @@ class Search extends Component {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                });
-        } else {
-            this.setState({redirect: `/profile/${this.state.region}/${this.state.name}`});
+            });
         }
     }
 
@@ -67,17 +61,15 @@ class Search extends Component {
                                 <option value="tr1">TR</option>
                                 <option value="ru">RU</option>
                             </select>
-                        </div>
-                        <div>
                             <input  type="text" name="name" value={this.state.name} onChange={this.handleInputChange} placeholder="Summoner Name" id="box"/>
                         </div>
                         
-                        <div>
-                            
-                            <button imageUrl={arrow} type="button" id="btn" onClick={this.onSubmit}>
-                                <img src={arrow} className="arrow" alt="arrow" onClick={this.onSubmit} /> 
+                        <div>                          
+                            <button type="submit" value="Submit" id="btn" onClick={this.onSubmit}>
+                                <img src={arrow} className="arrow" alt="arrow" onClick={this.onSubmit} />
                             </button>
                         </div>
+                        
                     </form>
                 </div>
                 <img src={oval1} id="oval3" alt="shape"/>
@@ -88,3 +80,4 @@ class Search extends Component {
 }
 
 export default Search;
+//<img src={arrow} className="arrow" alt="arrow" onClick={this.onSubmit} />

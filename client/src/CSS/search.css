@@ -1,30 +1,45 @@
 .form-group{
-    position: absolute;
-    top: 330px;
-    left: 380px;
-    display: inline;
-    padding: 20px;
+  position: absolute;
+  top: 330px;
+  left: 380px;
+  display: inline;
+  padding: 20px;
 }
 
 #box{
-    width: 910px;
-    height: 55px;
-    padding: 20px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border-radius: 20px;
-    border: none;
-    opacity: 1;
+  outline:none;
+  width: 910px;
+  height: 55px;
+  padding: 20px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border-radius: 20px;
+  border: none;
+  opacity: 1;
 }
 
 #btn{
-    width: 55px;
-    height: 56px;
-    position: absolute;
-    top: 20px;
-    left: 940px; 
-    background: #25E25E 0% 0% no-repeat padding-box;
-    border-radius: 18px;
-    border: none;
+  outline:none;
+  width: 55px;
+  height: 56px;
+  position: absolute;
+  top: 20px;
+  left: 940px; 
+  background: #25E25E 0% 0% no-repeat padding-box;
+  border-radius: 18px;
+  border: none;
+}
+
+#btn:hover{
+  background: #000000 0% 0% no-repeat padding-box;
+  outline:none;
+  width: 55px;
+  height: 56px;
+  position: absolute;
+  top: 20px;
+  left: 940px; 
+  cursor: pointer;
+  border-radius: 18px;
+  border: none;
 }
 
 #region{
@@ -42,6 +57,7 @@
 }
 
 .arrow{
+  margin-top: -8%;
   width: 25px;
 }
 

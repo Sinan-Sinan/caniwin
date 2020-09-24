@@ -18,6 +18,6 @@ TO FIX LIST:
 -When you click enter you dont get redirected
 -Change Ovals
 -Erros Message and Page redericts
-
+-Cant get profile on refresh error
 
 */

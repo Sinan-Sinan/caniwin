@@ -8,7 +8,7 @@
     "server": "nodemon server",
     "client": "npm start --prefix client",
     "python": "flask run -h localhost -p 4000",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run python\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Sinan",
   "license": "ISC",
@@ -27,7 +27,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "react-router-dom": "^5.2.0",
     "requirejs-babel": "0.0.9"
   }
