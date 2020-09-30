@@ -3,7 +3,7 @@ import axios from 'axios';
 import Rank from './Rank.js';
 import MatchHistroy from './PlayAgain.js';
 import '../CSS/profile.css';
-import arrow from "../assets/profile/arrow.svg";
+import arrow from "../assets/arrow.svg";
 import oval1 from "../assets/profile/1.svg";
 import oval2 from "../assets/profile/2.svg";
 

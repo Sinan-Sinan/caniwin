@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   output: {
-    path: path.resolve(__dirname, '../public')
+    path: path.resolve(__dirname, '../public'),
+    publicPath: '/src/assets'
   }, 
   devServer: {
     inline: false,
@@ -46,7 +47,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'file-loader?name=/img/[name].[ext]'
           }
         ]
       }

@@ -1,15 +1,13 @@
 .block{
-    position: absolute;
-    background-color: rgb(53, 85, 117);
-    color: white;
-    left: 0;
-    top: 0;
+    position: fixed;
+    background-color: #17a843;
     width: 100%;
     border-bottom: 1em;
     border-color: 3px solid gray;
 }
 
 img{
+    background-color: #17a843;
     width: 10%;
     display:block;
     margin: auto;

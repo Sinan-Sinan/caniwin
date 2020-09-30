@@ -24,13 +24,12 @@
   position: absolute;
   top: 20px;
   left: 940px; 
-  background: #25E25E 0% 0% no-repeat padding-box;
+  background:  #17a843 0% 0% no-repeat padding-box;
   border-radius: 18px;
   border: none;
 }
 
 #btn:hover{
-  background: #000000 0% 0% no-repeat padding-box;
   outline:none;
   width: 55px;
   height: 56px;
@@ -57,7 +56,6 @@
 }
 
 .arrow{
-  margin-top: -8%;
   width: 25px;
 }
 

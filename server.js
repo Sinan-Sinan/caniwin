@@ -1,7 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
-var cors = require('cors')
+var cors = require('cors');
+const { AlertIcon } = require('@primer/octicons-react');
 
 dotenv.config({path: './config.env'});
 
@@ -13,10 +14,9 @@ if(process.env.NODE_ENV === 'development'){
 }
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(`${__dirname}/public`));
+    app.use(express.static(`${__dirname}/build`));
 
-    //app.get(/.*/, (req, res) => res.sendFile(`${__dirname}/public/index.html`));
-
+    app.get(/.*/, (req, res) => res.sendFile(`${__dirname}/build/index.html`));
 }
 
 app.use('/api/v1/', require('./routes/profile'));
@@ -26,3 +26,4 @@ const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`);
 });
+

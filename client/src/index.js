@@ -15,8 +15,8 @@ ReactDOM.render(
 
 /*
 TO FIX LIST:
--When you click enter you dont get redirected
--Change Ovals
+-Change back arrow to white
+-fix production 
 -Erros Message and Page redericts
 -Cant get profile on refresh error
 
