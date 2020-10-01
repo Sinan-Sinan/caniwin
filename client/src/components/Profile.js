@@ -27,7 +27,7 @@ class Profile extends Component {
 
     async componentDidMount() {
         try{
-            const res = await axios.get(`http://localhost:5000/api/v1/summoner/${this.props.match.params.region}/${this.props.match.params.name}`);
+            const res = await axios.get(`http://caniwin.lol/api/v1/summoner/${this.props.match.params.region}/${this.props.match.params.name}`);
             this.setState({
                 profileIconId: res.data.profileIconId,
                 name: res.data.name,
@@ -42,7 +42,7 @@ class Profile extends Component {
             });
         }
         try{
-            const res = await axios.get(`http://localhost:5000/api/v1/patch`);
+            const res = await axios.get(`http://caniwin.lol/api/v1/patch`);
             this.setState({
                 patch: res.data[2],
                 loading: false

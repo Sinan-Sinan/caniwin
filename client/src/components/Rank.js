@@ -14,7 +14,7 @@ class Rank extends Component {
     
     async componentDidMount() {
         try{
-            const res = await axios.get(`http://localhost:5000/api/v1/summoner/rank/${this.props.region}/${this.props.accountId}`);
+            const res = await axios.get(`http://caniwin.lol/api/v1/summoner/rank/${this.props.region}/${this.props.accountId}`);
 
             this.setState({
                 tier: res.data[0].tier,
