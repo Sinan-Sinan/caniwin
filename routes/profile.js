@@ -87,19 +87,4 @@ router.get('/summoner/match-history/:region/:AccountId', async (req, res) => {
     }
 });
 
-router.get('/playAgain', async (req, res) => {
-    try{
-        const response = await fetch(`http://localhost:4000/playAgain`);
-
-        const data = await response.json();
-
-        return res.json(data);
-    } catch(err) {
-        console.error(err);
-        return res.status(500).json({
-            message: "Server Error"
-        })
-    }
-});
-
 module.exports = router;

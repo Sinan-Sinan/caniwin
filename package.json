@@ -8,7 +8,8 @@
     "server": "nodemon server",
     "client": "npm start --prefix client",
     "python": "flask run -h localhost -p 4000",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "production": "node server.js"
   },
   "author": "Sinan",
   "license": "ISC",
