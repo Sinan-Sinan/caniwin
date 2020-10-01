@@ -12,13 +12,14 @@ router.get('/summoner/:region/:name', async (req, res) => {
 
         const response = await fetch(`https://${region}${process.env.TRACK_API_URL}/lol/summoner/v4/summoners/by-name/${name}`, {headers});
     
+    
         const data = await response.json();
 
-        if(data.errors && data.errors.length > 0){
-            return res.status(404).json({
-                message: 'Profile Not Found'
+        if(data.status !== undefined){
+            return res.status(data.status.status_code).json({
+                message: "Error " + data.status.status_code + ": " + data.status.message
             })
-        }
+        }               
 
         res.json(data);
 

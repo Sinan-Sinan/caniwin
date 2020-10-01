@@ -6,7 +6,14 @@ import '../CSS/profile.css';
 import arrow from "../assets/arrow.svg";
 import oval1 from "../assets/profile/1.svg";
 import oval2 from "../assets/profile/2.svg";
+import { css } from "@emotion/core";
+import SyncLoader from "react-spinners/SyncLoader";
 
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 class Profile extends Component {
     
     constructor(props){
@@ -21,7 +28,9 @@ class Profile extends Component {
             id: null,
             summonerLevel: null,
             puuid: null,
-            redirect: false
+            redirect: false,
+            profileIcon: null,
+            status: undefined
         }
     }
 
@@ -34,43 +43,63 @@ class Profile extends Component {
                 accountId: res.data.accountId,
                 id: res.data.id,
                 puuid: res.data.puuid,
-                summonerLevel: res.data.summonerLevel,
+                summonerLevel: res.data.summonerLevel
             }); 
         } catch (err) {
             this.setState({
-                //error: err.response.message
+                error: err.message,
+                loading: false
             });
         }
         try{
             const res = await axios.get(`https://caniwin.lol/api/v1/patch`);
             this.setState({
                 patch: res.data[2],
-                loading: false
             });             
+            
         } catch (err) {
             this.setState({
+                error: err.message,
                 loading: false
-                //error: err.response.message
             });
         }
-      }
-      
-    image(){
-        return ("https://cdn.communitydragon.org/" + this.state.patch + "/profile-icon/" + this.state.profileIconId);
+        
+        this.setState({
+           profileIcon: await this.image(),
+           loading: false
+        })
+
     }
+
+    async image(){
+        return ("https://cdn.communitydragon.org/" + this.state.patch + "/profile-icon/" + this.state.profileIconId)
+    }
+
     render() {
         if(this.state.loading){
             return (
-                <div>
-                    <h3 id="loading">Loading...</h3>
+                <div >
+                <a href="/">
+                    <img src={arrow} id="arrow" alt="arrow" />
+                </a>
+                    <div id="loading">
+                        <SyncLoader
+                        css={override}
+                        size={15}
+                        color={"#000"}
+                        margin={5}
+                        loading={true}
+                        />
+                    </div>
                 </div>
+                
             )          
         }
         else if(this.state.error){
             return(
-                <div>
+                <div id="error">
                     <h1>{this.state.error}</h1>
-                    <h3>Go Back</h3>
+                    <a href="/" >Go Back</a>
                 </div>
             )
         }else{
@@ -83,7 +112,7 @@ class Profile extends Component {
                         <h1 id="summonerName">
                             {this.state.name}
                         </h1>   
-                        <img src={ this.image() } id="summonerIcon" alt="Img"/> 
+                        <img src={ this.state.profileIcon } id="summonerIcon" alt="Img"/> 
                         <Rank defer accountId={this.state.id} region={this.props.match.params.region} action={this.handler}/>
                         <MatchHistroy />
                     </div>   

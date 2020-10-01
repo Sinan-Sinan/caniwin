@@ -15,8 +15,8 @@ ReactDOM.render(
 
 /*
 TO FIX LIST:
--Change back arrow to white
--fix production images 
+-Wait for image 
+-CSS Change sizes
 -Erros Message and Page redericts
 -Cant get profile on refresh error
 
