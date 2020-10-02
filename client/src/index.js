@@ -15,9 +15,8 @@ ReactDOM.render(
 
 /*
 TO FIX LIST:
--Wait for image 
 -CSS Change sizes
--Erros Message and Page redericts
--Cant get profile on refresh error
+-Add site icon
+-add ml
 
 */

@@ -45,9 +45,9 @@ class Profile extends Component {
                 puuid: res.data.puuid,
                 summonerLevel: res.data.summonerLevel
             }); 
-        } catch (err) {
+        } catch (err) {        
             this.setState({
-                error: err.message,
+                error: err.response.data.message,
                 loading: false
             });
         }
@@ -59,7 +59,7 @@ class Profile extends Component {
             
         } catch (err) {
             this.setState({
-                error: err.message,
+                error: err.response.data.message,
                 loading: false
             });
         }
