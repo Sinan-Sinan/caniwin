@@ -80,4 +80,3 @@ class Search extends Component {
 }
 
 export default Search;
-//<img src={arrow} className="arrow" alt="arrow" onClick={this.onSubmit} />

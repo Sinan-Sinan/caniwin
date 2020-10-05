@@ -55,8 +55,7 @@ class Profile extends Component {
             const res = await axios.get(`https://caniwin.lol/api/v1/patch`);
             this.setState({
                 patch: res.data[2],
-            });             
-            
+            });                         
         } catch (err) {
             this.setState({
                 error: err.response.data.message,

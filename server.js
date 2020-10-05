@@ -7,6 +7,7 @@ const { AlertIcon } = require('@primer/octicons-react');
 dotenv.config({path: './config.env'});
 
 const app = express();
+
 app.use(cors());
 
 app.use('/api/v1/', require('./routes/profile'));

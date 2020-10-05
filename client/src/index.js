@@ -15,8 +15,7 @@ ReactDOM.render(
 
 /*
 TO FIX LIST:
--CSS Change sizes
--Add site icon
--add ml
-
+-CSS Change Sizes
+-CORS routing
+-Add ML
 */

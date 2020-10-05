@@ -3,8 +3,8 @@
     margin: auto;
 }
 #summonerName{
-    padding-top: 7%;
-    font-size: 60px;
+    padding-top: 10%;
+    font-size: 40px;
     text-align: center;
     margin: auto;
 }
@@ -13,16 +13,16 @@
     padding: 2%;
     display: flex;
     margin: auto;
-    width: 300px;
+    width: 20%;
     border-radius: 50%;
 }
 #arrow{
     margin: 2%;
     position: absolute;
-    width: 2.5%;
+    width: 4%;
 }
 #oval1{
-    top: 512px;
+    top: 615px;
     left: 1429px;
     width: 300px;
     height: 396px;
@@ -53,4 +53,25 @@
     margin-top: 6.5%;
     padding: 5%;
     background-color: white;
+}
+
+@media (max-width: 800px){
+    #summonerIcon{
+        background-color: white;
+        padding: 2%;
+        display: flex;
+        margin: auto;
+        width: 40%;
+        border-radius: 50%;
+    }
+}
+@media (max-width: 400px){
+    #summonerIcon{
+        background-color: white;
+        padding: 5%;
+        display: flex;
+        margin: auto;
+        width: 60%;
+        border-radius: 50%;
+    }
 }
