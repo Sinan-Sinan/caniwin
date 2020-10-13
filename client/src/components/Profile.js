@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Rank from './Rank.js';
+//import Rank from './Rank.js';
 import MatchHistroy from './PlayAgain.js';
 import '../CSS/profile.css';
 import arrow from "../assets/arrow.svg";
@@ -37,6 +37,7 @@ class Profile extends Component {
     async componentDidMount() {
         try{
             const res = await axios.get(`https://caniwin.lol/api/v1/summoner/${this.props.match.params.region}/${this.props.match.params.name}`);
+            
             this.setState({
                 profileIconId: res.data.profileIconId,
                 name: res.data.name,
@@ -44,8 +45,8 @@ class Profile extends Component {
                 id: res.data.id,
                 puuid: res.data.puuid,
                 summonerLevel: res.data.summonerLevel
-            }); 
-        } catch (err) {        
+            });
+        } catch (err) {     
             this.setState({
                 error: err.response.data.message,
                 loading: false
@@ -112,7 +113,7 @@ class Profile extends Component {
                             {this.state.name}
                         </h1>   
                         <img src={ this.state.profileIcon } id="summonerIcon" alt="Img"/> 
-                        <Rank defer accountId={this.state.id} region={this.props.match.params.region} action={this.handler}/>
+                        
                         <MatchHistroy />
                     </div>   
                     <img src={oval1} id="oval1" alt="shape"/>
@@ -125,3 +126,5 @@ class Profile extends Component {
 }
 
 export default Profile;
+
+//<Rank defer accountId={this.state.id} region={this.props.match.params.region} action={this.handler}/>

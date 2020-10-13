@@ -2,13 +2,12 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 var cors = require('cors');
-const { AlertIcon } = require('@primer/octicons-react');
 
 dotenv.config({path: './config.env'});
 
 const app = express();
 
-app.use(cors());
+//app.use(cors());
 
 app.use('/api/v1/', require('./routes/profile'));
 

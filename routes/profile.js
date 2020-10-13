@@ -4,13 +4,17 @@ const fetch = require('node-fetch');
 
 router.get('/summoner/:region/:name', async (req, res) => {
     try{
+
         const headers = {
-            'X-Riot-Token' : process.env.TRACKER_API_KEY
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
+            "Access-Control-Allow-Credentials": true,
+            "Content-Type": "application/json"
         }
         
         const { region, name } = req.params;
 
-        const response = await fetch(`https://${region}${process.env.TRACK_API_URL}/lol/summoner/v4/summoners/by-name/${name}`, {headers});
+        const response = await fetch(`https://61txbkhoi9.execute-api.us-east-1.amazonaws.com/rgapi/summoner/${region}/${name}`, {headers});
     
     
         const data = await response.json();
@@ -52,12 +56,15 @@ router.get('/summoner/rank/:region/:id', async (req, res) => {
     try{
 
         const headers = {
-            'X-Riot-Token' : process.env.TRACKER_API_KEY
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
+            "Access-Control-Allow-Credentials": true,
+            "Content-Type": "application/json"
         }
 
         const { region, id } = req.params;
 
-        const response = await fetch(`https://${region}${process.env.TRACK_API_URL}/lol/league/v4/entries/by-summoner/${id}`, {headers});
+        const response = await fetch(`https://61txbkhoi9.execute-api.us-east-1.amazonaws.com/rgapi/summoner/`, {headers});
 
         const data = await response.json();
 
@@ -75,7 +82,7 @@ router.get('/summoner/match-history/:region/:AccountId', async (req, res) => {
 
         const { region, AccountId } = req.params;
         
-        const response = await fetch(`https://${region}${process.env.TRACK_API_URL}/lol/match/v4/matchlists/by-account/${AccountId}`);
+        const response = await fetch(`https://61txbkhoi9.execute-api.us-east-1.amazonaws.com/rgapi/summoner/`);
 
         const data = await response.json();
 
